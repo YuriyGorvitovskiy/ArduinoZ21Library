@@ -401,12 +401,12 @@ void Z21Translator::processXPacket(uint8_t* data) {
 void Z21Translator::processLocoInfo(uint8_t* data) {
     uint16_t addr = Z21Packet::getBEuint16(data, 5) & 0x3FFF;
 
-    int XDB2 = Z21Packet::getDB2(data);
-    int XDB3 = Z21Packet::getDB3(data);
-    int XDB4 = Z21Packet::getDB4(data);
-    int XDB5 = Z21Packet::getDB5(data);
-    int XDB6 = Z21Packet::getDB6(data);
-    int XDB7 = Z21Packet::getDB7(data);
+    uint8_t XDB2 = Z21Packet::getDB2(data);
+    uint8_t XDB3 = Z21Packet::getDB3(data);
+    uint8_t XDB4 = Z21Packet::getDB4(data);
+    uint32_t XDB5 = Z21Packet::getDB5(data);
+    uint32_t XDB6 = Z21Packet::getDB6(data);
+    uint32_t XDB7 = Z21Packet::getDB7(data);
 
     boolean busy      = Z21Packet::hasBit(XDB2, 0x8);
     boolean forward   = Z21Packet::hasBit(XDB3, 0x80);

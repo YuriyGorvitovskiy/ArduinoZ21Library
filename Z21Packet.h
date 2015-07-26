@@ -15,7 +15,7 @@
 class Z21Packet {
 public:
     static const int MIN_PACKET_SIZE = 4;
-    static const int MAX_PACKET_SIZE = 20;
+    static const int MAX_PACKET_SIZE = 64;
 
 public:
     uint16_t length;
