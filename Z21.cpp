@@ -408,7 +408,7 @@ void Z21Translator::processLocoInfo(uint8_t* data) {
     uint32_t XDB6 = Z21Packet::getDB6(data);
     uint32_t XDB7 = Z21Packet::getDB7(data);
 
-    boolean busy      = Z21Packet::hasBit(XDB2, 0x8);
+    boolean busy      = Z21Packet::hasBit(XDB2, 0x08);
     boolean forward   = Z21Packet::hasBit(XDB3, 0x80);
     boolean consist   = Z21Packet::hasBit(XDB4, 0x40);
     boolean transpond = Z21Packet::hasBit(XDB4, 0x20);
